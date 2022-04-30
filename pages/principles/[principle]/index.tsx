@@ -4,7 +4,11 @@ import Pattern from '../../../components/pattern';
 import { wrapLine } from '../../../utils/wrapLines';
 import Breadcrumb from '../../../components/breadcrumb';
 
-const IndividualPrinciplePage = ({ principle }) => {
+const PrinciplePage = ({ principle }) => {
+  if (!principle) {
+    return;
+  }
+
   const patternLines = [
     `Principle ${principle.ref_id} - ${principle.title}`,
     '--------------------------',
@@ -61,4 +65,4 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default IndividualPrinciplePage;
+export default PrinciplePage;

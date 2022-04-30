@@ -4,7 +4,11 @@ import { wrapLine } from '../../../../../utils/wrapLines';
 import Breadcrumb from '../../../../../components/breadcrumb';
 import Pattern from '../../../../../components/pattern';
 
-const IndividualGuidelinePage = ({ guideline, principle }) => {
+const GuidelinePage = ({ guideline, principle }) => {
+  if (!guideline) {
+    return null;
+  }
+
   const patternLines = [
     `Guideline ${guideline.ref_id}`,
     ...wrapLine(guideline.title),
@@ -76,4 +80,4 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default IndividualGuidelinePage;
+export default GuidelinePage;

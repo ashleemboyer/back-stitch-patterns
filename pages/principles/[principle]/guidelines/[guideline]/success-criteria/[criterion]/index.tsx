@@ -3,7 +3,11 @@ import { wrapLine } from '../../../../../../../utils/wrapLines';
 import Breadcrumb from '../../../../../../../components/breadcrumb';
 import Pattern from '../../../../../../../components/pattern';
 
-const IndividualGuidelinePage = ({ criterion, guideline, principle }) => {
+const SuccessCriterionPage = ({ criterion, guideline, principle }) => {
+  if (!criterion) {
+    return null;
+  }
+
   const patternLines: string[] = [
     `Success Criterion ${criterion.ref_id}`,
     ...wrapLine(criterion.title),
@@ -71,4 +75,4 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default IndividualGuidelinePage;
+export default SuccessCriterionPage;
